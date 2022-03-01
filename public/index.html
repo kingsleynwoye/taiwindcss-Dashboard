@@ -1,12 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
     <title>Dashboard</title>
 </head>
+
 <body class="bg-gray-200">
     <div>
-        <h1>Hello world</h1>
-    </div>
+        <!--SIDE NAVBAR -->
+        <div class="flex">
+            <div class="bg-indigo-900 w-64">
+                <div class="bg-indigo-800">
+                    <div class="uppercase text-gray-200 p-5 text-xl font-bold">Super Corp</div>
+                </div>
+                <div>
+                    <div class="p-5 text-gray-200 uppercase text-xs font-bold">Pages</div>
+                </div>
+                <div class="flex m-5 mt-2">
+                    <div>
+                        <img class="h-5 w-5" src="images/dashboard.png" alt="">
+                    </div>
+                    <div class="mx-3 text-sm text-gray-100">Dashboard</div>
+                </div>
+                <div class="flex m-5 mt-2">
+                    <div>
+                        <img class="h-5 w-5" src="images/customers.png" alt="">
+                    </div>
+                    <div class="mx-3 text-sm text-gray-100">Customers</div>
+                </div>
+                <div class="flex m-5 mt-2">
+                    <div>
+                        <img class="h-5 w-5" src="images/orders.png" alt="">
+                    </div>
+                    <div class="mx-3 text-sm text-gray-100">Orders</div>
+                </div>
+                <div class="flex m-5 mt-2">
+                    <div>
+                        <img class="h-5 w-5" src="images/campaign.png" alt="">
+                    </div>
+                    <div class="mx-3 text-sm text-gray-100">Campaigns</div>
+                </div>
+                <div class="flex m-5 mt-2">
+                    <div>
+                        <img class="h-5 w-5" src="images/messages.png" alt="">
+                    </div>
+                    <div class="mx-3 text-sm text-gray-100">Messages</div>
+                </div>
+                <div class="flex m-5 mt-2">
+                    <div>
+                        <img class="h-5 w-5" src="images/apps.png" alt="">
+                    </div>
+                    <div class="mx-3 text-sm text-gray-100">Apps</div>
+                </div>
+                <div class="flex m-5 mt-2">
+                    <div>
+                        <img class="h-5 w-5" src="images/settings.png" alt="">
+                    </div>
+                    <div class="mx-3 text-sm text-gray-100">Settings</div>
+                </div>
+            </div>
+            <!-- MAIN CONTENT AREA -->
+            <div class="flex-1">
+                <div>
+                    <!-- TOP NAVBAR -->
+                    <div class="bg-white px-2 py-0.5 h-18 flex">
+                        <!-- LEFT -->
+                        <div class="flex p-3 md:w-3/4 sm:1/3">
+                            <img class="h-10 w-10" src="images/person.png" alt="">
+                            <span class="block p-2">Joseph</span>
+                        </div>
+                        <!-- RIGHT -->
+                        <div class="flex md:1/4 sm:w-2/3">
+                            <img src="images/search.png" class="w-7 h-7 bg-gray-100 rounded-full p-1 mx-2 my-4" alt="">
+                            <img src="images/message.png" class="w-7 h-7 bg-gray-100 rounded-full p-1 mx-2 my-4" alt="">
+                            <img src="images/warning.png" class="w-7 h-7 bg-gray-100 rounded-full p-1 mx-2 my-4" alt="">
+                            <a href="" class="mt-4 mx-2 text-indigo-500">Logout</a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- SITE BANNER -->
+            <div class="bg-indigo-200 m-7 p-6">
+                    <div class="text-4xl text-gray-800 font-medium">Good Morning, Super Inc.👋</div>
+                   <div class="mt-4">These are the start for today, have a good day </div>
+            </div>
+            <!-- CARD CONTAINER -->
+            <div class="flex m-7 space-x-6">
+                <!-- CARD 1-->
+                  <div class="w-1/2 bg-white p-4">
+                 <div>
+                     <img src="images/wallet.png" class="w-10 h-10" alt="">
+                 </div>
+                 <div class="text-xl text-gray-700  font-bold">Super plus</div>
+                 <div class="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">Sales</div>
+                 <span class="font-bold text-3xl">$25,647</span>
+                 <span class="bg-green-500 text-white p-1 rounded-full text-sm font-bold align-text-top">+58%</span>
+                  <!-- CHART 1-->
+                 <canvas id="Chart1"></canvas>
+                </div>
+                  <!-- CARD 2-->
+                  <div class="w-1/2 bg-white p-4">
+                    <div>
+                        <img src="images/wallet.png" class="w-10 h-10" alt="">
+                    </div>
+                    <div class="text-xl text-gray-700  font-bold">Super plus</div>
+                    <div class="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">Sales</div>
+                    <span class="font-bold text-3xl">$25,647</span>
+                    <span class="bg-red-500 text-white p-1 rounded-full text-sm font-bold align-text-top">-9%</span>
+                    <!-- CHART 2-->
+                    <canvas id="Chart2"></canvas>
+                </div>
+            </div>
+                        <div class="flex m-7 space-x-6">
+                            <!-- CARD 3-->
+                            <div class="w-1/2 bg-white p-4">
+                                <div>
+                                    <img src="images/wallet.png" class="w-10 h-10" alt="">
+                                </div>
+                                <div class="text-xl text-gray-700  font-bold">Super plus</div>
+                                <div class="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">Sales</div>
+                                <span class="font-bold text-3xl">$25,647</span>
+                                <span class="bg-green-500 text-white p-1 rounded-full text-sm font-bold align-text-top">+58%</span>
+                                <!-- CHART 3-->
+                                <canvas id="Chart3"></canvas>
+                            </div>
+                            <!-- CARD 4-->
+                            <div class="w-1/2 bg-white p-4">
+                                <div>
+                                    <img src="images/wallet.png" class="w-10 h-10" alt="">
+                                </div>
+                                <div class="text-xl text-gray-700  font-bold">Super plus</div>
+                                <div class="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">Sales</div>
+                                <span class="font-bold text-3xl">$25,647</span>
+                                <span class="bg-red-500 text-white p-1 rounded-full text-sm font-bold align-text-top">-9%</span>
+                                <!-- CHART 4-->
+                                <canvas id="Chart4"></canvas>
+                            </div>
+                        </div>
+                        <!--  -->
+                       <div class="flex m-7 space-x-6">
+                      <div class="bg-white w-1/3 p-4 divide-y divide-gray-200">
+                          <div class="font-bold text-lg pb-4">Top Countries</div>
+                            <!-- CHART 5 -->
+                       <canvas id="Chart5" class="pt-4"></canvas>
+                      </div>
+                      <div class="bg-white w-2/3 p-4">
+                            <div class="font-bold text-lg pb-4">Top Channels</div>
+                              <div class="flex bg-gray-100 p-2 uppercase font-bold text-xs text-gray-500">
+                                  <div class="w-1/3">
+                                      <div>Source</div>
+                                  </div>
+                                <div class="w-3/4 flex space-x-16">
+                                    <div>Visitors</div>
+                                    <div>Revenues</div>
+                                    <div>Sales</div>
+                                    <div>Conversion</div>
+                                </div>
+                              </div>
+
+                              <!-- MULTI-CHANNEL-CONTAINER -->
+                              <div class="divide-y divide-gray-200">
+                                  <!-- SINGLE CHANNEL -->
+                                  <div class="pt-2 pb-2">
+                                      <div class="flex">
+                                     <div class="w-1/3 ">
+                                         <div class="flex">
+                                            <!-- IMAGE AND TEXT -->
+                                            <div>
+                                               <img src="images/youtu.png" class="w-8 h-8" alt="">
+                                            </div>
+                                            <div class="pl-2 pt-1">Youtube</div>
+                                            </div>
+                                     </div>
+                                     <div class="w-3/4 flex space-x-16">
+                                        <div>2.4k</div>
+                                        <div class="text-green-500">$16,00</div>
+                                        <div>340</div>
+                                        <div class="text-blue-500">4.9%</div>
+                                     </div>
+                                    </div>
+                                  </div>
+                                <div class="pt-2 pb-2">
+                                    <div class="flex">
+                                        <div class="w-1/3 ">
+                                            <div class="flex">
+                                                <!-- IMAGE AND TEXT -->
+                                                <div>
+                                                    <img src="images/facebook.png" class="w-8 h-8" alt="">
+                                                </div>
+                                                <div class="pl-2 pt-1">Facebook</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-3/4 flex space-x-16">
+                                            <div>2.4k</div>
+                                            <div class="text-green-500">$16,00</div>
+                                            <div>340</div>
+                                            <div class="text-blue-500">4.9%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-2 pb-2">
+                                    <div class="flex">
+                                        <div class="w-1/3 ">
+                                            <div class="flex">
+                                                <!-- IMAGE AND TEXT -->
+                                                <div>
+                                                    <img src="images/github.png" class="w-8 h-8" alt="">
+                                                </div>
+                                                <div class="pl-2 pt-1">Github</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-3/4 flex space-x-16">
+                                            <div>2.4k</div>
+                                            <div class="text-green-500">$16,00</div>
+                                            <div>340</div>
+                                            <div class="text-blue-500">4.9%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-2 pb-2">
+                                    <div class="flex">
+                                        <div class="w-1/3 ">
+                                            <div class="flex">
+                                                <!-- IMAGE AND TEXT -->
+                                                <div>
+                                                    <img src="images/instagram.png" class="w-8 h-8" alt="">
+                                                </div>
+                                                <div class="pl-2 pt-1">Instagram</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-3/4 flex space-x-16">
+                                            <div>2.4k</div>
+                                            <div class="text-green-500">$16,00</div>
+                                            <div>340</div>
+                                            <div class="text-blue-500">4.9%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-2 pb-2">
+                                    <div class="flex">
+                                        <div class="w-1/3 ">
+                                            <div class="flex">
+                                                <!-- IMAGE AND TEXT -->
+                                                <div>
+                                                    <img src="images/WhatsApppng" class="w-8 h-8" alt="">
+                                                </div>
+                                                <div class="pl-2 pt-1">WhatsApp</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-3/4 flex space-x-16">
+                                            <div>2.4k</div>
+                                            <div class="text-green-500">$16,00</div>
+                                            <div>340</div>
+                                            <div class="text-blue-500">4.9%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-2 pb-2">
+                                    <div class="flex">
+                                        <div class="w-1/3 ">
+                                            <div class="flex">
+                                                <!-- IMAGE AND TEXT -->
+                                                <div>
+                                                    <img src="images/twitter.png" class="w-8 h-8" alt="">
+                                                </div>
+                                                <div class="pl-2 pt-1">Twitter</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-3/4 flex space-x-16">
+                                            <div>2.4k</div>
+                                            <div class="text-green-500">$16,00</div>
+                                            <div>340</div>
+                                            <div class="text-blue-500">4.9%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                      </div>       
+                    </div>
+
+            </div>
+        </div>
+        <!-- CHART 1 -->
+        <script>
+            var ctx = document.getElementById('Chart1').getContext('2d');
+            var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'june'],
+                        datasets: [{
+                            label: 'Number of sales',
+                            data: [1,2,3,4,5,6],
+                            backgroundColor: [
+                                 'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+        </script>
+        <!-- CHART 2-->
+            <script>
+                var ctx = document.getElementById('Chart2').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'june'],
+                        datasets: [{
+                            label: 'Number of sales',
+                            data: [20, 102, 45, 74, 95, 6],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+            </script>
+            <!-- CHART 3-->
+            <script>
+                var ctx = document.getElementById('Chart3').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'june'],
+                        datasets: [{
+                            label: 'Number of sales',
+                            data: [20, 102, 45, 74, 95, 6],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            // y: {
+                            //     beginAtZero: true
+                            // }
+                        }
+                    }
+                });
+
+            </script>
+                <!-- CHART 3-->
+                <script>
+                    var ctx = document.getElementById('Chart4').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'radar',
+                        data: {
+                            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'june'],
+                            datasets: [{
+                                label: 'Number of sales',
+                                data: [20, 22, 33, 10, 95, 6],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+
+                </script>
+                <!-- CHART 5-->
+                <script>
+                    var ctx = document.getElementById('Chart5').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'june'],
+                            datasets: [{
+                                label: 'Number of sales',
+                                data: [20, 102, 45, 74, 95, 6],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                               
+                            }
+                        }
+                    });
+
+                </script>
+            
 </body>
+
 </html>
